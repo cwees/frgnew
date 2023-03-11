@@ -1,0 +1,38 @@
+type Response @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  userID: ID! @index(name: "byUser")
+  datetime: AWSDateTime
+  text: String
+  promptID: ID! @index(name: "byPrompt")
+}
+
+type Prompt @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  adminID: ID! @index(name: "byAdmin")
+  determines: [Response] @hasMany(indexName: "byPrompt", fields: ["id"])
+  datetim: AWSDateTime
+  text: String
+}
+
+type User @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  adminID: ID! @index(name: "byAdmin")
+  writes: [Response] @hasMany(indexName: "byUser", fields: ["id"])
+  firstname: String
+  lastname: String
+  storelocation: String
+  email: AWSEmail
+}
+
+type Admin @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  firstname: String
+  lastname: String
+  email: AWSEmail
+  storelocation: String
+  username: String
+  password: String
+  isadmin: String
+  manages: [User] @hasMany(indexName: "byAdmin", fields: ["id"])
+  decides: [Prompt] @hasMany(indexName: "byAdmin", fields: ["id"])
+}
