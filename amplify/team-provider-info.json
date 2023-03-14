@@ -11,5 +11,26 @@
       "StackId": "arn:aws:cloudformation:us-east-2:508466436108:stack/amplify-newfrg-staging-224258/1255dff0-c05e-11ed-8188-06c8fdc8f04c",
       "AmplifyAppId": "d1kg8db10f0uqo"
     }
+  },
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-newfrg-dev-00918-authRole",
+      "UnauthRoleArn": "arn:aws:iam::508466436108:role/amplify-newfrg-dev-00918-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::508466436108:role/amplify-newfrg-dev-00918-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-newfrg-dev-00918-deployment",
+      "UnauthRoleName": "amplify-newfrg-dev-00918-unauthRole",
+      "StackName": "amplify-newfrg-dev-00918",
+      "StackId": "arn:aws:cloudformation:us-east-2:508466436108:stack/amplify-newfrg-dev-00918/608b4880-c226-11ed-9220-025a7738d5a0",
+      "AmplifyAppId": "d3qjdzmkm3wot2"
+    },
+    "categories": {
+      "auth": {
+        "newfrg22cbe517": {}
+      },
+      "api": {
+        "newfrg": {}
+      }
+    }
   }
 }
